@@ -26,6 +26,7 @@ class PlatController extends Controller
     public function compositionDuPlat(plat $plat)
     {
         $compositions = $plat->composants()->withPivot('quantite', 'unité')->get();
-        return response()->json($compositions);
+        return view('Composition', compact('compositions'));
+
     }
 }
